@@ -5,8 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('toggle').addEventListener('change', (e) => {
-    chrome.storage.sync.set({ enabled: e.target.checked }, () => {
-      console.log("Toggle set to:", e.target.checked);
+    const isEnabled = e.target.checked;
+    chrome.storage.sync.set({ enabled: isEnabled }, () => {
+      // Reload the active tab
+      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        if (tabs[0]) {
+          chrome.tabs.reload(tabs[0].id);
+        }
+      });
     });
   });
 });
