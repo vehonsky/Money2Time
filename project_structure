@@ -1,0 +1,9 @@
+manifest.json
+options.html
+css/
+  ├── options.css
+js/
+  ├── options.js
+  └── background.js
+images/
+  └── icon.png 
