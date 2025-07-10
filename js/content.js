@@ -41,7 +41,7 @@ function convertMoneyToTime() {
           const remainingDays = Math.floor(totalWorkDays % 20);
           const years = Math.floor(months / 12);
           const remainingMonths = months % 12;
-          const remainingHours = Math.round((hours % 40) * 10) / 10;
+          const remainingHours = Math.round((hours % 8) * 10) / 10;
 
           if (years > 0) timeString += `${years}y `;
           if (remainingMonths > 0 || years > 0) timeString += `${remainingMonths}m `;
@@ -75,7 +75,7 @@ function convertMoneyToTime() {
           const remainingDays = Math.floor(totalWorkDays % 20);
           const years = Math.floor(months / 12);
           const remainingMonths = months % 12;
-          const remainingHours = Math.round((hours % 40) * 10) / 10;
+          const remainingHours = Math.round((hours % 8) * 10) / 10;
 
           if (years > 0) timeString += `${years}y `;
           if (remainingMonths > 0 || years > 0) timeString += `${remainingMonths}m `;
